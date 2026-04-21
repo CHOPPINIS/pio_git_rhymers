@@ -4,11 +4,12 @@ public class DefaultCountingOutRhymer {
 
     public final int STACK_SIZE = 12;
     public final int EMPTY_STACK_VAL = -1;
-    public final int FULL_STACK_VAL = 11;
+    public final int TOTAL_INIT_VAL = -1;
+    public final int FULL_STACK_VAL = STACK_SIZE - 1;
 
-    private int[] numbers = new int[STACK_SIZE];
+    private final int[] numbers = new int[STACK_SIZE];
 
-    public int total = EMPTY_STACK_VAL;
+    public int total =TOTAL_INIT_VAL;
 
     public void countIn(int in) {
         if (!isFull())
@@ -16,7 +17,7 @@ public class DefaultCountingOutRhymer {
     }
 
     public boolean callCheck() {
-        return total == EMPTY_STACK_VAL;
+        return total == TOTAL_INIT_VAL;
     }
 
     public boolean isFull() {
